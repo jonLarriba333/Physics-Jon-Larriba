@@ -14,7 +14,7 @@ public class CollisionChecks : MonoBehaviour
         
     }
 
-    private void onCollissionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Capsule")
         {

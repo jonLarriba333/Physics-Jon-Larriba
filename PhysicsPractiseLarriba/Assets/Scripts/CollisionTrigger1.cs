@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections;
 
-public class CollisionChecks : MonoBehaviour
+public class CollisionTrigger1 : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,25 +15,26 @@ public class CollisionChecks : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.name == "Capsule")
+        if (other.gameObject.name == "Capsule")
         {
             Debug.Log("Collission Entered");
-        }
+         }
+        //Destroy(gameObject);
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.name == "Capsule")
+        if (other.gameObject.name == "Capsule")
         {
             Debug.Log("Inside the collision");
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.name == "Capsule")
+        if (other.gameObject.name == "Capsule")
         {
             Debug.Log("Collision exited");
             //Destroy(gameObject); This is for destroying the object
